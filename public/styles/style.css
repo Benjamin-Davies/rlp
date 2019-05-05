@@ -1,0 +1,10 @@
+body {
+  font-family: sans-serif;
+}
+
+#click-area {
+  margin: 1rem;
+  width: 100px;
+  height: 100px;
+  background: red;
+}

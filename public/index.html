@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en_NZ">
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>RLP</title>
+
+    <link rel="stylesheet" href="/styles/style.css">
+    
+    <script src="/scripts/client.js"></script>
+
+  </head>
+  <body>
+
+    <h1>Hello</h1>
+
+    <button onclick="live.next()">Next</button>
+    <button onclick="live.prev()">Prev</button>
+
+    <div id="click-area"></div>
+
+    <script>
+      const el = document.getElementById('click-area');
+      el.addEventListener('mousedown', e => {
+        e.preventDefault();
+        switch (e.which) {
+          case 1:
+            live.next();
+            break;
+          case 3:
+            live.prev();
+            break;
+        }
+      });
+
+      document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+
+  </body>
+</html>

@@ -1,8 +1,12 @@
 require 'sinatra'
-require 'net/http'
+require './openlp/remote.rb'
 
 class App < Sinatra::Base
-  get '/' do
-    Net::HTTP.get 'localhost', '/api/controller/live/next', 4316
+  get '/api/live/next' do
+    $live.next
+  end
+
+  get '/api/live/prev' do
+    $live.prev
   end
 end
